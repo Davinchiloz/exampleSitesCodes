@@ -1,0 +1,6 @@
+@for $i from 1 through 6 {
+  h#{$i} {
+    margin-top: 0;
+    letter-spacing: 0.47px;
+  }
+}

@@ -1,0 +1,204 @@
+.desktop-view {
+  @media (max-width: 90em) {
+    .c-conversation-card-group {
+      padding-left: $gap / 2;
+      padding-right: $gap / 2;
+    }z
+
+    .c-conversations__date:first-of-type {
+      margin-top: inherit;
+      display: inherit;
+      padding-bottom: inherit;
+    }
+
+    .c-conversations__date {
+      margin-top: -7px;
+      display: block;
+      padding-bottom: 10px;
+    }
+  }
+}
+
+/* FIXME we should always use sass variables */
+@media (min-width: 1024px) {
+  .c-conversation__title, .c-conversation__subtitle {
+    padding-left: $gap / 2;
+  }
+
+  .c-conversations__pannel {
+    margin-left: $gap / 2;
+    margin-right: $gap / 2;
+  }
+}
+
+@media (max-width: 90em) {
+  .c-conversation-card-group:first-of-type {
+    padding-top: $gap / 2;
+  }
+}
+
+.c-conversation-card-group{
+  display: block;
+  width: 100% !important;
+  .c-conversation-card{
+    width: 49% !important;
+    display: inline-block;
+    vertical-align: top;
+  }
+}
+
+.c-conversation-card {
+  background-color: #fff;
+  border: 1px solid $colorBlue-lighter;
+  border-radius: $global-radius;
+  overflow: hidden;
+  display: block;
+  margin-bottom: $gap;
+
+  @include media-query(large) {
+    display: table-cell;
+    margin-bottom: 0;
+  }
+  .o-flag{
+    padding: 10px;
+    .o-flag__img{
+        height: 50px;
+        width: 50px !important;
+        border-radius: 50%;
+        overflow: hidden;
+        
+        img{
+          width:100%;
+        }
+    }
+    .o-flag__body{
+        margin-left:20px;
+        width: calc(100% - 120px);
+        position:relative;
+        h3, span{
+          font-size: 16px;
+          display: block;
+          font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+          font-weight: bold; 
+        }
+        .u-ml\+{
+          margin:0 !important;
+          h3{
+            &:first-letter{
+              text-transform: uppercase;
+            }
+            font-size: 14px;
+          }
+          small{
+            font-size: 14px;
+            color:#B2C1CA;
+            font-weight: bold;
+          }
+        }
+        
+        .time-date{
+          text-align: right;
+          position:absolute;
+          right:0;
+          top:0;
+          span{
+            display: block;
+            font-size: 14px;
+            line-height: 17px;
+            font-weight: bold;
+            font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+          }
+        }
+
+    }
+    .o-flag__body, .o-flag__img{
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+  .u-ph{
+    padding:0 !important;
+    .o-pack {
+      display: block;
+      table-layout: none;
+      
+      h5{
+        font-size: 12px;
+        color:$colorBlue-titles;
+        text-transform: uppercase;
+      }
+      ul{
+        padding:$gap/2 $gap*3 !important;
+        li{
+          font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+          font-weight: 400;
+          font-size: 12px;
+          list-style-type:none;
+          position:relative;
+          &:before{
+            content:'';
+            border-radius:50%;
+            width: 3px;
+            height: 3px;
+            top: 7px;
+            left: -11px;
+            background:$black;
+            position:absolute;
+          }
+        } 
+      }
+      h5, ul{
+        padding:9px 14px !important;
+        border-top:1px solid $colorBlue-lighter;
+      }
+      ul{
+        padding:6px 10px 6px 30px !important;
+      }
+    }
+  }
+  .o-pack__item{
+    display: block !important;
+  }
+  .u--mh{
+    margin:0 !important;
+  }
+  
+}
+
+.c-conversation-card__avatar {
+  background-color: #fff;
+  
+  
+}
+
+.colorBlue-light{
+  color:$colorBlue-light;
+}
+
+$card-section-colors: #7ED321 #D0021B $blue-1;
+
+.c-conversation-card__section {
+  width: $gap / 3;
+  border-radius: 4px;
+
+  .c-conversation-card__yesterday & {
+    background-color: nth($card-section-colors, 3)
+  }
+
+  .c-conversation-card__today & {
+    background-color: nth($card-section-colors, 1)
+  }
+
+  .c-conversation-card__blocks & {
+    background-color: nth($card-section-colors, 2)
+  }
+
+}
+
+.c-conversation-card__list {
+  margin: 0;
+  padding-left: 17px;
+  font-weight: 300;
+}
+
+

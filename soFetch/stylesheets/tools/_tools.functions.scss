@@ -1,0 +1,7 @@
+@function opposite($side) {
+  @if $side == "left" {
+    @return "right";
+  } @else {
+    @return "left";
+  }
+}

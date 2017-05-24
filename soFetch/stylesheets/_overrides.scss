@@ -1,0 +1,486 @@
+.o-layout {
+  @extend %clearfix;
+}
+
+.o-layout__item {
+  float: left;
+}
+
+.o-pack--border {
+  .o-pack__item {
+    border-right: 1px solid $fg;
+
+    &:last-child {
+      border-right: 0;
+    }
+  }
+}
+
+.#{$inuit-btn-namespace}btn--blue {
+  background-color: $blue-1;
+  border-color: darken($blue-1, 10%);
+}
+
+.#{$inuit-btn-namespace}btn--skyblue {
+  background-color: $skyblue;
+  border-color: darken($skyblue, 10%);
+  color: #000;
+
+  &:hover{
+    color: #000;
+  }
+}
+
+.stretch-img img {
+  width: 100%!important;
+}
+
+.mobile-nav {
+  display: none;
+}
+
+.mobile-view {
+  display: none;
+}
+
+.desktop-view {
+  display: block;
+}
+
+.billing-c-pannel {
+  background-color: #fff;
+  padding: 19px;
+  border: 1px solid #d2ccce;
+  border-radius: 6px;
+  margin-bottom: 19px;
+  border-spacing: 10px;
+  font-size: 16px;
+}
+
+/**
+ * Overrides for Mobile view
+ *
+ * FIXME this needs to use sass variables
+ */
+@media (max-width: 960px) {
+  .c-main {
+    max-width: 100%;
+  }
+
+  .marketing-page {
+    background-color: #fff;
+  }
+  .marketing-page h1 {
+    font-size: 20px;
+  }
+  .marketing-page p {
+    font-size: 16px;
+  }
+  .marketing-nav {
+    padding-bottom: 30px;
+  }
+  .user_signed_in--false {
+    padding: 0 0!important;
+  }
+  .pricing-box {
+    margin-bottom: 55px;
+    margin-top: 55px;
+  }
+  .pricing-override-btn {
+    font-size: 15px!important;
+  }
+
+  .c-sidebar {
+    display: none;
+  }
+
+  .navbar {
+    display: block;
+  }
+
+  .mobile-nav {
+    display: block;
+  }
+
+  .mobile-view {
+    display: block;
+  }
+
+  .desktop-view {
+    display: none;
+  }
+
+  .billing-c-pannel {
+    font-size: 14px;
+  }
+}
+
+header{
+	width:100%;
+	background:#FC8063;
+	height:50px;
+	line-height:50px;
+}
+
+.hamburger{
+  background:none;
+  position:absolute;
+  top:0;
+  left: 0;
+  line-height:45px;
+  padding:0px 15px 0px 15px;
+  color:#fff;
+  border:0;
+  font-size:1.4em;
+  font-weight:bold;
+  cursor:pointer;
+  outline:none;
+  z-index:10000000000000;
+}
+.cross{
+  background:none;
+  position:absolute;
+  top:0px;
+  left: 0;
+  padding:0px 15px 0px 15px;
+  color:#fff;
+  border:0;
+  font-size:3em;
+  line-height:65px;
+  font-weight:bold;
+  cursor:pointer;
+  outline:none;
+  z-index:10000000000000;
+}
+.menu{z-index:1000000; font-weight:bold; font-size:1.2em; width:100%; background:#FC8063;  position:absolute; text-align:left; padding-left: 15px;}
+.menu ul {margin: 0; padding: 0; list-style-type: none; list-style-image: none;}
+.menu li {display: block;   padding:15px 0 15px 0; border-bottom:#FC8063 1px solid;}
+.menu li:hover{display: block; background:#428BCA; padding:15px 0 15px 0; border-bottom:#FC8063 1px solid;}
+.menu ul li a { text-decoration:none;  margin: 0px; color:#fff;}
+.menu ul li a:hover {  color: #fff; text-decoration:none;}
+.menu a{text-decoration:none; color:white;}
+.menu a:hover{text-decoration:none; color:white;}
+
+.glyphicon-home{
+  color:white;
+  font-size:1.5em;
+  margin-top:5px;
+  margin:0 auto;
+}
+
+.marketing-nav {
+  padding-top: 20px;
+  padding-right: 20px;
+  margin-bottom: -15px;
+}
+
+.marketing-page h1 {
+  font-size: 30px;
+}
+.marketing-logo img {
+  margin-top: 10px;
+}
+
+.u--mh-override p {
+  margin-bottom: 2px;
+}
+
+.billing-marketing small {
+  font-weight: 300px;
+}
+
+.pricing-override h3 {
+  font-size: 23px;
+}
+
+.pricing-override h4 {
+  margin-bottom: 14px;
+  line-height: 1.2;
+}
+
+.pricing-override p {
+  font-size: 20px;
+}
+
+.pricing-override {
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.pricing-override-btn {
+  width: 95%;
+  padding-top: 10px!important;
+  padding-bottom: 10px!important;
+  border-radius: 4px;
+  margin-bottom: -8px;
+}
+
+.pricing-override-dashboard-btn {
+  width: 95%;
+  padding-top: 10px!important;
+  padding-bottom: 10px!important;
+  border-radius: 4px;
+  margin-bottom: -8px;
+  text-align: center;
+  background: white;
+}
+
+.pricing-oerride-btn a {
+  vertical-align: middle;
+}
+
+
+.text-black {
+  font-color: #000;
+}
+
+.marketing-button {
+  margin-bottom: 40px;
+}
+
+.pricing-override-blue {
+  font-weight: normal!important;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+
+.mobile-c-form-element {
+  border: 1px solid $fg;
+  padding: ($gap / 3) ($gap / 2);
+  margin-bottom: $gap;
+  border-radius: $global-radius;
+  width: 100%;
+  text-align: center;
+  background-color: #fff;
+}
+
+.mobile-select {
+  width: 100%;
+}
+
+.current_plan {
+  color: #D1D0D0;
+}
+
+.current_plan button {
+  color: #D1D0D0;
+  opacity: 0.5;
+}
+
+.mark {
+  background-color: #FC8063;
+  color: white;
+  padding: 3px;
+  border-radius: 3px;
+  font-size: 16px;
+}
+
+.logout-fa {
+  color: #fff;
+}
+
+.btn-font-19 {
+  font-size: 19px;
+}
+
+.font-white {
+  color: #fff;
+}
+
+table.reports-table {
+  border-collapse: collapse;
+}
+
+table.reports-table td {
+  border: 1px solid #808080;
+  padding: 5px;
+  text-align: center;
+}
+
+table.reports-table th {
+  padding: 5px;
+  text-align: center;
+}
+
+.slack-button-text {
+  color: #000;
+}
+
+.slack-button-text img {
+  margin-bottom: -7px;
+}
+
+.bot-is-not-in-room {
+  display: none;
+}
+
+.bot-is-in-room {
+  display: none;
+}
+
+.schedule-save-link {
+  display: none;
+}
+
+.o-pack-auto {
+  table-layout: auto!important;
+}
+
+#invite-bot-text {
+  color: #d2ccce;
+}
+
+.bot-is-not-in-group {
+  display: none;
+}
+
+.status-page {
+  padding: 0px;
+}
+
+.status-logo {
+  padding-top: 15px!important;
+}
+
+.u-background--green {
+  background-color: green;
+}
+
+.u-background--red {
+  background-color: #F7DEE1;
+  color: #000;
+  padding-left: 90px;
+  padding-right: 90px;
+}
+
+.u-background--blue {
+  padding-left: 90px;
+  padding-right: 90px;
+  background-color: #E1F7EE;
+  color: #000;
+}
+
+.bug-link {
+  text-align: center;
+  background-color: #428BCA;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  color: #fff;
+}
+
+.bug-link a {
+  color: #fff;
+}
+
+.bug-link a:hover {
+    text-decoration: underline;
+}
+
+.status-page {
+  font-weight: 500;
+}
+
+.bug-link a {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.bug-link {
+  font-size: 18px;
+}
+
+.status-page h1 {
+  font-weight: 400;
+}
+
+.hr-grey hr {
+  height: 1px;
+  border-width: 0;
+  background-color: #d2ccce;
+}
+
+.status-description {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.dont-break-out {
+
+  /* These are technically the same, but use both */
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  -ms-word-break: break-all;
+  /* This is the dangerous one in WebKit, as it breaks things wherever */
+  word-break: break-all;
+  /* Instead use this non-standard one: */
+  word-break: break-word;
+
+  /* Adds a hyphen where the word breaks, if supported (No Blink) */
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+
+}
+
+.font-18 {
+  font-size: 18px;
+}
+
+.save-btn {
+  padding: 5px 10px 5px 10px!important;
+  font-weight: 800;
+  padding-top: 8px;
+  border-radius: 8px;
+  width: 100px;
+  padding-bottom: 8px;
+  border-width: 2px;
+  font-size: 15px;
+}
+
+.check-again-btn {
+  padding: 5px 10px 5px 10px!important;
+  font-weight: 800;
+  border-radius: 8px;
+  width: 170px;
+  padding-bottom: 8px;
+  border-width: 2px;
+  font-size: 15px;
+}
+
+.fa-green {
+  color: green;
+}
+
+.fa-red {
+  color: red;
+}
+
+.select2-selection__choice {
+  background-color: $ws !important;
+}
+
+.pika-lendar {
+  .is-selected .pika-button {
+    background: $color-2 !important;
+    box-shadow: none !important;
+  }
+
+  .is-today:not(.is-selected):not(.is-startrange):not(.is-endrange) .pika-button {
+    color: $blue-2 !important;
+  }
+
+  .is-startrange .pika-button {
+    background: $color-2 !important;
+  }
+
+  .is-endrange .pika-button {
+    background: $blue-2 !important;
+  }
+
+  .pika-button:hover {
+    background: $color-2 !important;
+  }
+}

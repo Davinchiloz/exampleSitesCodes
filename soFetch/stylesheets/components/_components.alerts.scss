@@ -1,0 +1,16 @@
+.alert {
+
+  &-warning {
+    color: $warning-color;
+    background-color: lighten($warning-color, 50%);
+  }
+  &-error,
+  &-danger {
+    color: $error-color;
+    background-color: lighten($error-color, 50%);
+  }
+  &-success {
+    color: $success-color;
+    background-color: lighten($success-color, 50%);
+  }
+}

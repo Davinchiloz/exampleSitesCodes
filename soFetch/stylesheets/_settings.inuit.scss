@@ -1,0 +1,143 @@
+//
+// Inuit breakpoints override settings
+// ==========================================================================
+$breakpoints: (
+    // "palm"          "screen and (max-width: 44.9375em)",
+    // "lap"           "screen and (min-width: 45em) and (max-width: 63.9375em)",
+    // "lap-and-up"    "screen and (min-width: 45em)",
+    // "portable"      "screen and (max-width: 63.9375em)",
+    "desk"             "screen and (min-width: 64em)",
+    "large"            "screen and (min-width: 90em)",
+    // "retina"        "(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx)"
+);
+
+
+
+
+
+//
+// Inuit Layout override settings
+// ==========================================================================
+
+$inuit-layout-namespace:        'o-';
+$inuit-enable-layout--flush:    true;
+
+
+
+
+
+//
+// Inuit Pack override settings
+// ==========================================================================
+
+$inuit-pack-namespace:      'o-';
+
+$inuit-enable-pack--auto:   true;
+$inuit-enable-pack--tiny:   true;
+$inuit-enable-pack--small:  true;
+$inuit-enable-pack--large:  true;
+$inuit-enable-pack--huge:   true;
+$inuit-enable-pack--rev:    true;
+$inuit-enable-pack--middle: true;
+$inuit-enable-pack--bottom: true;
+
+
+
+
+
+//
+// Inuit Spacing override settings
+// ==========================================================================
+
+$inuit-spacing-namespace:               'u-';
+
+$inuit-enable-margins:                  true;
+$inuit-enable-margins--tiny:            true;
+$inuit-enable-margins--small:           true;
+$inuit-enable-margins--large:           true;
+$inuit-enable-margins--huge:            true;
+
+$inuit-enable-margins--negative:        true;
+$inuit-enable-margins--negative-tiny:   true;
+$inuit-enable-margins--negative-small:  true;
+$inuit-enable-margins--negative-large:  true;
+$inuit-enable-margins--negative-huge:   true;
+
+$inuit-enable-margins--none:            true;
+
+$inuit-enable-paddings:                 true;
+$inuit-enable-paddings--tiny:           true;
+$inuit-enable-paddings--small:          true;
+$inuit-enable-paddings--large:          true;
+$inuit-enable-paddings--huge:           true;
+
+$inuit-enable-paddings--none:           true;
+
+$inuit-enable-responsive-margins:                   none;
+$inuit-enable-responsive-margins--tiny:             none;
+$inuit-enable-responsive-margins--small:            none;
+$inuit-enable-responsive-margins--large:            none;
+$inuit-enable-responsive-margins--huge:             none;
+
+$inuit-enable-responsive-margins--negative:         none;
+$inuit-enable-responsive-margins--negative-tiny:    none;
+$inuit-enable-responsive-margins--negative-small:   none;
+$inuit-enable-responsive-margins--negative-large:   none;
+$inuit-enable-responsive-margins--negative-huge:    none;
+
+$inuit-enable-responsive-margins--none:             none;
+
+$inuit-enable-responsive-paddings:                  none;
+$inuit-enable-responsive-paddings--tiny:            none;
+$inuit-enable-responsive-paddings--small:           none;
+$inuit-enable-responsive-paddings--large:           none;
+$inuit-enable-responsive-paddings--huge:            none;
+
+$inuit-enable-responsive-paddings--none:            none;
+
+
+
+
+
+//
+// Inuit Flag override settings
+// ==========================================================================
+
+$inuit-flag-namespace:          'o-';
+$inuit-enable-flag--flush:      true;
+$inuit-enable-flag--bottom:     true;
+
+
+
+
+
+//
+// Inuit Button override settings
+// ==========================================================================\
+
+$inuit-btn-padding:         halve($inuit-base-spacing-unit);
+$inuit-btn-padding--small:  halve($inuit-btn-padding);
+$inuit-btn-padding--large:  double($inuit-btn-padding);
+$inuit-btn-background:      $color-1;
+$inuit-btn-color:           #fff;
+$inuit-btn-border-width:    1px;
+$inuit-btn-border-style:    solid;
+$inuit-btn-border-color:    darken($inuit-btn-background, 10%);
+$inuit-btn-radius:          3px;
+
+$inuit-enable-btn--small:   true;
+$inuit-enable-btn--large:   true;
+$inuit-enable-btn--full:    true;
+$inuit-enable-btn--pill:    true;
+
+
+
+
+
+//
+// Inuit Widths override settings
+// ==========================================================================\
+
+$inuit-widths-columns-responsive: (
+ 1,2,3,4,5
+);

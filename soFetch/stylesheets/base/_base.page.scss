@@ -1,0 +1,16 @@
+html {
+  height: 100%;
+  background-color: $ws;
+}
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+  font-weight: 300;
+
+  height: 100%;
+
+  &.user_signed_in--true {
+    background-color: none;
+    background-image: linear-gradient(to right, $color-1 50%, $blue-1 50%);
+  }
+}

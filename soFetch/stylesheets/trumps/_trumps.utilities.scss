@@ -1,0 +1,114 @@
+$utilities: (
+  vertical-align:   (middle top),
+  color:            (white black),
+  background:       (white black),
+  font-weight:      (300 400 700),
+  text-align:       (left right center),
+  float:            (left right none),
+  clear:            (left right none),
+  position:         (relative absolute),
+  display:          (none block inline-block inline),
+  cursor:           (pointer help),
+  border:           (none),
+  text-indent:      (0),
+  line-height:      (1),
+  bottom:           (0),
+  overflow:         (hidden)
+);
+
+@each $u, $utility in $utilities {
+  @for $i from 1 through length($utility)  {
+    .u-#{$u}--#{nth($utility, $i)} {
+      #{$u}: nth($utility, $i);
+    }
+  }
+}
+
+@each $c in $color-names {
+  $color: index($color-names, $c);
+  .u-background--#{$c} {
+    background-color: nth($color-values, $color);
+  }
+  .u-color--#{$c} {
+    color: nth($color-values, $color);
+  }
+  .u-fill--#{$c} {
+    &, & * {
+      fill: nth($color-values, $color);
+    }
+  }
+}
+
+.u-ma {
+  margin: auto !important;
+}
+
+.u-mla {
+  margin-left: auto !important;
+}
+
+.u-mta {
+  margin-top: auto !important;
+}
+
+.u-mra {
+  margin-right: auto !important;
+}
+
+.u-mba {
+  margin-bottom: auto !important;
+}
+
+@each $position in left top right bottom {
+  .u-no-margin--#{$position} {
+    margin-#{$position}: 0;
+  }
+
+  .u-no-padding--#{$position} {
+    padding-#{$position}: 0;
+  }
+}
+
+.u-no-padding {
+  padding: 0;
+}
+
+.u-no-margin {
+  margin: 0;
+}
+
+.u-link {
+  background: none;
+  border: none;
+  color: $blue-1;
+}
+
+.u-link:focus {
+  outline: none;
+}
+
+.u-border {
+  border: 1px solid $fg;
+}
+
+.u-rounded {
+  border-radius: 9999px;
+}
+
+@each $s in $sides {
+  @each $e in $extremes {
+    .u-rounded-#{$e}-#{$s} {
+      border-#{$e}-#{$s}-radius: $gap / 4;
+    }
+  }
+}
+
+.u-font-size--20 {
+  font-size: 20px;
+}
+.u-font-size--18 {
+  font-size: 18px;
+}
+.u-font-size--16 {
+  font-size: 16px;
+}

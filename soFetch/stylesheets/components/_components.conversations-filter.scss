@@ -1,0 +1,22 @@
+.c-conversations__buttons--with-conversations {
+  position: absolute;
+  right: 0;
+  top: 13px;
+}
+
+.c-conversations__buttons--without-conversations {
+  position: absolute;
+  right: 0;
+  top: -11px;
+}
+
+.c-conversations-filter {
+  position: absolute;
+  margin: 0 !important;
+  top: 29px;
+  left: -549px;
+  z-index: 10;
+  cursor: default;
+  width: 580px;
+  border-radius: 0 !important;
+}

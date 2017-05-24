@@ -1,0 +1,428 @@
+!!!
+%html{ lang: 'en' }
+  %head
+    %title Standup Bot by So Fetch
+
+    %meta{ charset: 'utf-8' }
+    %meta{ content: 'IE=edge', 'http-equiv' => 'X-UA-Compatible' }
+    %meta{ content: 'width=device-width, initial-scale=1.0', name: 'viewport' }
+    %meta{:content => "height=device-height,width=device-width,initial-scale=1.0,maximum-scale=1.0", :name => "viewport"}/
+
+    = stylesheet_link_tag    'application', media: 'all'
+    = javascript_include_tag 'application'
+    = csrf_meta_tags
+
+    = yield :koudoku
+
+%body{ class: "user_signed_in--#{user_signed_in?}" }
+  - if user_signed_in?
+    .mobile-nav
+      = render "layouts/mobile_navbar"
+
+    %div.modal
+      %div.modal-scroll
+        %div.modal-box
+          %h1
+            Create a Check-In
+            %a
+              %i.fa.fa-close
+          %div.rowField.modal-stage
+            
+
+            %div
+              %a.fa.fa-arrow-left
+
+              %figure
+                %img{:src => "http://www.marialuciana.co/-davidlozada-/imageStageCheck.jpg"}
+              %div
+                %name
+                  Standups!
+                %description
+                  Instead of wasting time, a standup meeting gets to the meat of the meeting quickly
+
+              %a.fa.fa-arrow-right
+
+          %h5
+            Name your check-in
+          %div.rowField
+            %input{:type=>"text", :placeholder=>"Enter check-in name - Ex. “Standup - Project Name”"}
+
+          %h5
+            Select check-in icon
+          %div.rowField.icon-selecting
+            %a
+              %i.fa.fa-users 
+            %a
+              %i.fa.fa-commenting
+            %a
+              %i.fa.fa-book
+            %a
+              %i.fa.fa-smile-o
+            %a
+              %i.fa.fa-refresh
+            %a
+              %i.fa.fa-eye
+            %a
+              %i.fa.fa-heart
+            %a
+              %i.fa.fa-usd
+            %a
+              %i.fa.fa-life-ring
+            %a
+              %i.fa.fa-bullhorn
+            %a
+              %i.fa.fa-university
+            %a
+              %i.fa.fa-anchor
+            %a
+              %i.fa.fa-desktop
+            %a
+              %i.fa.fa-hand-paper-o
+            %a
+              %i.fa.fa-birthday-cake
+
+          %h5
+            Which users should participate?
+          %div.rowField.modal-field-side
+            %input{:type=>"text", :placeholder=>"Add individual user"}
+
+            %div.select-icon-box
+              %i.fa.fa-chevron-down
+              %select.channel-user
+                %option Add users from a channel
+                %option User1
+                %option User2
+                %option User3
+                %option User4
+
+            %div.users-participate
+
+              %div
+                %a.close-icon
+                  %i.fa.fa-close
+                %figure
+                  %img{:src => "http://www.marialuciana.co/-davidlozada-/user1.jpg"}
+                %figcaption
+                  %name
+                    Santiago Doldan
+                  %div.icons-tools
+                    %a.actived
+                      %i.fa.fa-eye
+                    %a
+                      %i.fa.fa-pencil-square-o
+                    %a
+                      %i.fa.fa-plane
+                    %a
+                      %i.fa.fa-black-tie
+
+              %div
+                %a.close-icon
+                  %i.fa.fa-close
+                %figure
+                  %img{:src => "http://www.marialuciana.co/-davidlozada-/user2.jpg"}
+                %figcaption
+                  %name
+                    Tim Chilcott
+                  %div.icons-tools
+                    %a.actived
+                      %i.fa.fa-eye
+                    %a
+                      %i.fa.fa-pencil-square-o
+                    %a
+                      %i.fa.fa-plane
+                    %a
+                      %i.fa.fa-black-tie
+
+              %div
+                %a.close-icon
+                  %i.fa.fa-close
+                %figure
+                  %img{:src => "http://www.marialuciana.co/-davidlozada-/user3.jpg"}
+                %figcaption
+                  %name
+                    Krystal Douglas
+                  %div.icons-tools
+                    %a.actived
+                      %i.fa.fa-eye
+                    %a.actived
+                      %i.fa.fa-pencil-square-o
+                    %a
+                      %i.fa.fa-plane
+                    %a
+                      %i.fa.fa-black-tie
+
+              %div
+                %a.close-icon
+                  %i.fa.fa-close
+                %figure
+                  %img{:src => "http://www.marialuciana.co/-davidlozada-/user4.jpg"}
+                %figcaption
+                  %name
+                    Corey Grusden
+                  %div.icons-tools
+                    %a.actived
+                      %i.fa.fa-eye
+                    %a
+                      %i.fa.fa-pencil-square-o
+                    %a
+                      %i.fa.fa-plane
+                    %a.actived
+                      %i.fa.fa-black-tie
+
+             
+          %h5
+            Set your questions
+          %div.rowField
+
+            %div.input-remove-icon-field
+              %a.fa.fa-minus-circle
+              %input{:type=>"text", :placeholder=>"What did you do yesterday?"}
+
+            %div.input-remove-icon-field
+              %a.fa.fa-minus-circle
+              %input{:type=>"text", :placeholder=>"What are you working on today?"}
+
+            %div.input-remove-icon-field
+              %a.fa.fa-minus-circle
+              %input{:type=>"text", :placeholder=>"Is anything standing in your way?"}
+
+            %a.add-question
+              %i.fa.fa-plus
+              %span
+                Add another question
+
+          %h5
+            Schedule your check-in
+
+          %div.rowField.modal-option-block
+
+            %div
+              %i.fa.fa-globe
+              %a
+                %i.fa.fa-chevron-down
+              %name
+                Users timezone
+              %description
+                Check-in will send based on users set timezone.
+
+            %div
+              %i.fa.fa-clock-o
+              %span
+                9:00 AM
+
+            %div
+              %i.fa.fa-calendar-check-o
+              %a
+                %i.fa.fa-chevron-down
+              %name
+                Every week day
+              %description
+                Check-in will send Monday through Friday.
+
+          %div.btn-modal-box
+            %a.create-btn
+              Create Check-In
+
+    .top-header
+      = link_to main_app.root_path, class: 'c-sidebar__top u-text-align--center' do
+        = image_tag 'robot_logo_main.svg', height: '50px'
+      %header
+        %name
+          %i.fa.fa-users
+          Standup So Fetch
+        %date
+          Tuesday - Oct 04, 2016
+      %ul.options-top-header
+        %li
+          %a
+            %i.fa.fa-calendar
+            %span
+              Jump To
+        %li
+          %a
+            %i.fa.fa-sliders
+            %span
+              Filter
+        %li
+          %a
+            %i.fa.fa-cloud-download
+            %span
+              Download
+        %li
+          %a
+            %i.fa
+            %span
+              %form
+                %button
+                  %i.fa.fa-search
+                %input{:type=>"text", :placeholder=>"Search"}
+    .c-sidebar.c-sidebar--left
+      
+      %nav.c-navigation
+
+        %ul.c-navigation__list.ppal-navigation
+          %li
+            %a
+              %i.fa.fa-list-alt
+              %span
+                Reports
+          %li
+            %a
+              %i.fa.fa-line-chart
+              %span
+                Metrics
+          %li
+            %a
+              %i.fa.fa-comment
+              %span
+                Mentions
+      %div.other-user
+        %ul.c-navigation__list
+          %li
+            %img{:src => "http://www.marialuciana.co/-davidlozada-/img3.png"}
+            %ul.c-navigation__list.checkin-status
+              %li.c-navigation__item.is-active
+                %a
+                  %i.fa.fa-cog
+                  Team Settings
+              %li.c-navigation__item
+                %a
+                  %i.fa.fa-usd
+                  Billing
+              %li.c-navigation__item
+                %a
+                  %i.fa.fa-plug
+                  API
+              %li.c-navigation__item
+                %a
+                  %i.fa.fa-twitter
+                  Follow us on Twitter
+              %li.c-navigation__item
+                %a
+                  %i.fa.fa-facebook-square
+                  Follow us on Facebook
+          %li
+            %img{:src => "http://www.marialuciana.co/-davidlozada-/img2.png"}
+            %ul.c-navigation__list.checkin-status
+              %li.c-navigation__item.is-active
+                %a
+                  %i.fa.fa-cog
+                  Team Settings
+              %li.c-navigation__item
+                %a
+                  %i.fa.fa-usd
+                  Billing
+              %li.c-navigation__item
+                %a
+                  %i.fa.fa-plug
+                  API
+              %li.c-navigation__item
+                %a
+                  %i.fa.fa-twitter
+                  Follow us on Twitter
+              %li.c-navigation__item
+                %a
+                  %i.fa.fa-facebook-square
+                  Follow us on Facebook
+
+
+           
+
+  - elsif params[:controller] == 'dashboard' && (params[:action] == 'index' || params[:action] == 'speed')
+    .o-pack.marketing-nav
+      .o-pack__item.u-color--blue-1.u-text-align--right
+        %b
+          = link_to 'Features', '#features'
+          \|
+          = link_to 'Pricing', '#pricing'
+          \|
+          = link_to 'Support', '#support'
+          = link_to 'Sign up', "https://slack.com/oauth/authorize?scope=users:read,identify,commands,bot&client_id=#{ENV['SLACK_CLIENT_ID']}", class: 'btn btn--blue btn--small'
+          = link_to 'Log in', "https://slack.com/oauth/authorize?scope=identity.basic&client_id=#{ENV['SLACK_CLIENT_ID']}", class: 'btn btn--blue btn--small'
+
+  - elsif current_page?(:controller => 'dashboard', action: 'status') && !current_user
+    .o-pack.marketing-nav
+      .o-pack__item.u-color--blue-1.u-text-align--right
+        %b
+          = link_to 'Features', root_url + '#features'
+          \|
+          = link_to 'Pricing', root_url + '#pricing'
+          \|
+          = link_to 'Support', root_url + '#support'
+          = link_to 'Sign up', "https://slack.com/oauth/authorize?scope=users:read,identify,commands,bot&client_id=#{ENV['SLACK_CLIENT_ID']}", class: 'btn btn--blue btn--small'
+          = link_to 'Log in', "https://slack.com/oauth/authorize?scope=users:read,identify,commands,bot&client_id=#{ENV['SLACK_CLIENT_ID']}", class: 'btn btn--blue btn--small'
+
+  %main.c-main
+    .c-main__wrapper#flash{ class: "user_signed_in--#{user_signed_in?}" }
+      = render 'layouts/flash', flash: flash
+      = yield
+
+  - if user_signed_in?
+    .c-sidebar.c-sidebar--right
+
+      %nav.c-navigation.sidebar-options
+        %div.c-navigation__title
+          Check ins
+          %a
+            %i.fa.fa-plus-circle
+        %ul.c-navigation__list.checkin-status
+          %li.c-navigation__item.is-active
+            %a
+              %i.fa.fa-users
+              Standup So Fetch
+              %i.fa.fa-cog
+              %i.fa.fa-circle
+          %li.c-navigation__item.js-navigation-item
+            %a
+              %i.fa.fa-commenting
+              Feedback
+              %i.fa.fa-cog
+              %i.fa.fa-circle
+          %li.c-navigation__item
+            %a
+              %i.fa.fa-book
+              Thing I Learned
+              %i.fa.fa-cog
+              %i.fa.fa-circle
+          %li.c-navigation__item
+            %a
+              %i.fa.fa-smile-o
+              Team Happiness
+              %i.fa.fa-cog
+              %i.fa.fa-circle
+          %li.c-navigation__item
+            %a
+              %i.fa.fa-refresh
+              Retrospectives
+              %i.fa.fa-cog
+              %i.fa.fa-circle
+          %li.c-navigation__item
+            %a
+              %i.fa.fa-birthday-cake
+              Santiago Yearly
+              %i.fa.fa-cog
+              %i.fa.fa-circle
+        %div.c-navigation__title
+          Inactive check ins
+        %ul.c-navigation__list.checkin-status-inactive
+          %li.c-navigation__item
+            %a
+              %i.fa.fa-hand-paper-o
+              Standup Alii
+              %i.fa.fa-cog
+              %i.fa.fa-circle
+          %li.c-navigation__item
+            %a
+              %i.fa.fa-hand-paper-o
+              Standup MIS
+              %i.fa.fa-cog
+              %i.fa.fa-circle
+          %li.c-navigation__item
+            %a
+              %i.fa.fa-hand-paper-o
+              Standup Atomized
+              %i.fa.fa-cog
+              %i.fa.fa-circle
+
+
+  = render 'layouts/google_analytics'

@@ -1,0 +1,19 @@
+.c-pannel {
+  background-color: #fff;
+  padding: $gap;
+  border: 1px solid $fg;
+  border-radius: $global-radius;
+  margin-bottom: $gap;
+}
+
+.c-pannel--landing {
+  p, li {
+    font-size: 18px;
+    font-weight: 300;
+  }
+  @for $i from 1 through 6 {
+    h#{$i} {
+      font-weight: 400;
+    }
+  }
+}
